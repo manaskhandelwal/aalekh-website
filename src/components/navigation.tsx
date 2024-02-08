@@ -121,7 +121,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
             <div
               className={clsx(
                 BERKSHIRE_SWASH.className,
-                `my-16 flex flex-col gap-10`
+                `my-16 flex flex-col gap-10 text-center`
               )}
             >
               {navLinks()}
