@@ -4,6 +4,7 @@ import { Parallax } from "react-parallax";
 
 import { ChancellorMessage } from "@/modules/chancellor-message";
 import { HeroSection } from "@/modules/hero-section";
+import { LrcSection } from "@/modules/lrc-section";
 import { WhatIsAalekh } from "@/modules/what-is-aalekh";
 
 interface HomePageProps {}
@@ -20,6 +21,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
         strength={200}
         className="h-[40vh]"
       />
+      <LrcSection />
     </>
   );
 };
