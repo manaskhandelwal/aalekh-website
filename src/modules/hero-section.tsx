@@ -39,15 +39,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
         <Image
           alt="books"
           src={"/hero-section-books.png"}
-          width={(435.33 / 100) * (isLaptop ? 100 : 50)}
-          height={(450 / 100) * (isLaptop ? 100 : 50)}
+          width={(435.33 / 100) * (isLaptop ? 80 : 50)}
+          height={(450 / 100) * (isLaptop ? 80 : 50)}
           priority
           quality={100}
-          className={clsx(
-            isLaptop
-              ? `bottom-0 right-12 absolute`
-              : `bottom-[-60px] left-[50%] translate-x-[-50%] absolute sm:hidden`
-          )}
+          className={clsx(isLaptop ? `bottom-0 right-12 absolute` : `hidden`)}
           draggable={false}
         />
       </Wrapper>
