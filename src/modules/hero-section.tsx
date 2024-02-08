@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
           priority
           quality={100}
           className={clsx(
-            `absolute top-[50%] translate-y-[-50%] `,
+            `absolute top-[40%] translate-y-[-50%] `,
             !isLaptop ? `left-[50%] translate-x-[-50%] max-w-[80vw]` : null
           )}
           draggable={false}
