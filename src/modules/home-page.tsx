@@ -18,10 +18,8 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
         bgImage="/parallax-1.jpg"
         bgImageAlt="sample photo"
         strength={200}
-        className="h-[50vh]"
+        className="h-[40vh]"
       />
-      <ChancellorMessage />
-      <WhatIsAalekh />
     </>
   );
 };
