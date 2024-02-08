@@ -1,5 +1,6 @@
 import { ChancellorMessage } from "@/modules/chancellor-message";
 import { HeroSection } from "@/modules/hero-section";
+import { WhatIsAalekh } from "@/modules/what-is-aalekh";
 
 interface HomePageProps {}
 
@@ -8,6 +9,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
     <>
       <HeroSection />
       <ChancellorMessage />
+      <WhatIsAalekh />
     </>
   );
 };
