@@ -21,17 +21,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
       <Navigation />
       <Wrapper className={`relative h-[calc(100vh-100px)]`}>
         <Image
-          alt="lrc and cerebrum logo"
+          alt="aalekh logo and"
           src={"/aalekh-hero-banner.png"}
           width={580}
           height={422.17}
           priority
           quality={100}
           className={clsx(
-            `absolute`,
-            !isLaptop
-              ? `left-[50%] translate-x-[-50%] max-w-[80vw] top-12`
-              : "top-12"
+            `absolute top-[50%] translate-y-[-50%] `,
+            !isLaptop ? `left-[50%] translate-x-[-50%] max-w-[80vw]` : null
           )}
           draggable={false}
         />
