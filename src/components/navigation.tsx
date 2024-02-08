@@ -4,6 +4,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
@@ -52,8 +53,15 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
   const isLaptop = useMediaQuery({ query: minWidth(1180) });
   const isSmallScreen = useMediaQuery({ query: minWidth(480) });
 
-  const logoWidth = isLaptop ? 149 : 137;
-  const logoHeight = isLaptop ? 50 : 46;
+  const [logoWidth, setLogoWidth] = useState(149);
+  const [logoHeight, setLogoHeight] = useState(50);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setLogoWidth(isLaptop ? 149 : 137);
+    setLogoHeight(isLaptop ? 50 : 46);
+    setMounted(true);
+  }, [isLaptop]);
 
   const cerebrumLogo = (
     <Link href={"https://library.bennett.edu.in/"} target="_blank">
@@ -68,7 +76,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
     </Link>
   );
 
-  return (
+  return mounted ? (
     <Wrapper className={`flex justify-between items-center py-6`}>
       <div className={`flex gap-2`}>
         {cerebrumLogo}
@@ -122,5 +130,5 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
         </Sheet>
       )}
     </Wrapper>
-  );
+  ) : null;
 };
