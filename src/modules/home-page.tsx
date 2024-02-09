@@ -2,6 +2,7 @@
 
 import { Parallax } from "react-parallax";
 
+import { Cerebrum } from "@/modules/cerebrum";
 import { ChancellorMessage } from "@/modules/chancellor-message";
 import { HeroSection } from "@/modules/hero-section";
 import { Itinerary } from "@/modules/itinerary";
@@ -44,6 +45,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
         strength={300}
         className="h-[40vh]"
       />
+      <Cerebrum />
     </>
   );
 };
