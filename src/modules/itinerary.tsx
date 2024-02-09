@@ -13,19 +13,20 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
         <span
           className={clsx(
             BERKSHIRE_SWASH.className,
-            `text-6xl sm:text-8xl block ml-10 sm:ml-16 leading-6 sm:leading-10`
+            `text-6xl sm:text-8xl block leading-6 sm:leading-10`
           )}
         >
           Itiner<span className={`text-primary`}>a</span>ry
         </span>
       </div>
-      <div>
+      <div className={`w-full`}>
         <Image
           alt="Itinerary of Aalekh 2024"
           src={"/itinerary.jpg"}
           width={1000}
           height={703}
           quality={100}
+          className={`m-auto`}
         />
       </div>
     </Wrapper>
