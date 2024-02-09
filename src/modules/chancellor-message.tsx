@@ -6,12 +6,12 @@ import { useMediaQuery } from "react-responsive";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
-import { minWidth } from "@/utils/media-query";
+import { maxWidth } from "@/utils/media-query";
 
 interface ChancellorMessageProps {}
 
 export const ChancellorMessage: React.FC<ChancellorMessageProps> = ({}) => {
-  const isBreakpoint = useMediaQuery({ query: minWidth(920) });
+  const isBreakpoint = useMediaQuery({ query: maxWidth(920) });
 
   return (
     <Wrapper className={`py-28 md:py-36`}>
@@ -74,8 +74,8 @@ export const ChancellorMessage: React.FC<ChancellorMessageProps> = ({}) => {
           <Image
             alt="Photo of Mr. Vineet Jain"
             src={"/chancellor.png"}
-            width={isBreakpoint ? 255 : 165}
-            height={isBreakpoint ? 340 : 220}
+            width={isBreakpoint ? 165 : 255}
+            height={isBreakpoint ? 220 : 340}
             quality={100}
             draggable={false}
             className={`translate-y-0 min-[490px]:translate-y-[-100px] min-[920px]:translate-y-0`}
