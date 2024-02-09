@@ -26,8 +26,8 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
         <Image
           alt="Cerebrum Logo"
           src={`/cerebrum-logo.jpg`}
-          width={127.12}
-          height={100}
+          width={203}
+          height={160}
         />
         <span
           className={`text-primary text-2xl sm:text-3xl block font-medium ml-10 sm:ml-16`}
