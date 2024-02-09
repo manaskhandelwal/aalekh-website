@@ -4,6 +4,7 @@ import { Parallax } from "react-parallax";
 
 import { Cerebrum } from "@/modules/cerebrum";
 import { ChancellorMessage } from "@/modules/chancellor-message";
+import { Footer } from "@/modules/footer";
 import { HeroSection } from "@/modules/hero-section";
 import { Itinerary } from "@/modules/itinerary";
 import { LrcSection } from "@/modules/lrc-section";
@@ -46,6 +47,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
         className="h-[40vh]"
       />
       <Cerebrum />
+      <Footer />
     </>
   );
 };
