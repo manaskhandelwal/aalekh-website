@@ -1,6 +1,8 @@
+import clsx from "clsx";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
+import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
 
 interface CerebrumProps {}
@@ -21,22 +23,36 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
       );
     });
   return (
-    <Wrapper className={`py-28 md:py-36`}>
-      <div className={`pb-20 min-[920px]:pb-32`}>
+    <Wrapper className={`py-10 md:py-16`}>
+      <div
+        className={`pb-16 min-[920px]:pb-24 flex items-center gap-5 min-[500px]:gap-10 flex-col min-[500px]:flex-row text-center min-[500px]:text-left`}
+      >
         <Image
           alt="Cerebrum Logo"
           src={`/cerebrum-logo.jpg`}
-          width={203}
-          height={160}
+          width={(203 / 100) * 70}
+          height={(160 / 100) * 70}
         />
-        <span
-          className={`text-primary text-2xl sm:text-3xl block font-medium ml-10 sm:ml-16`}
-        >
-          Official Debating and Literary Society
-        </span>
+        <div>
+          <h5
+            className={clsx(
+              BERKSHIRE_SWASH.className,
+              `text-4xl sm:text-6xl mb-2`
+            )}
+          >
+            Cerebrum
+          </h5>
+          <span
+            className={clsx(
+              `text-primary text-2xl sm:text-3xl block font-black`
+            )}
+          >
+            Official Debating and Literary Society
+          </span>
+        </div>
       </div>
 
-      <div className={`mb-20 relative`}>
+      <div className={`mb-16 relative`}>
         <Marquee pauseOnHover speed={45}>
           {srollerImages}
         </Marquee>

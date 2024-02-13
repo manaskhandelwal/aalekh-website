@@ -1,7 +1,6 @@
 "use client";
 
-import { Parallax } from "react-parallax";
-
+import { Parallax } from "@/components/parallax";
 import { Cerebrum } from "@/modules/cerebrum";
 import { ChancellorMessage } from "@/modules/chancellor-message";
 import { Footer } from "@/modules/footer";
@@ -19,33 +18,13 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <HeroSection />
       <ChancellorMessage />
       <WhatIsAalekh />
-      <Parallax
-        bgImage="/parallax-1.jpg"
-        bgImageAlt="sample photo"
-        strength={300}
-        className="h-[40vh]"
-      />
+      <Parallax image="/parallax-1.jpg" />
       <LrcSection />
-      <Parallax
-        bgImage="/parallax-2.jpg"
-        bgImageAlt="sample photo"
-        strength={300}
-        className="h-[40vh]"
-      />
+      <Parallax image="/parallax-2.jpg" />
       <MemorialSection />
-      <Parallax
-        bgImage="/parallax-1.jpg"
-        bgImageAlt="sample photo"
-        strength={300}
-        className="h-[40vh]"
-      />
+      <Parallax image="/parallax-1.jpg" />
       <Itinerary />
-      <Parallax
-        bgImage="/parallax-2.jpg"
-        bgImageAlt="sample photo"
-        strength={300}
-        className="h-[40vh]"
-      />
+      <Parallax image="/parallax-2.jpg" />
       <Cerebrum />
       <Footer />
     </>

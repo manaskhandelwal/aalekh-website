@@ -6,17 +6,17 @@ import { useMediaQuery } from "react-responsive";
 
 import { Navigation } from "@/components/navigation";
 import { Wrapper } from "@/components/wrapper";
-import { minWidth } from "@/utils/media-query";
+import { maxWidth } from "@/utils/media-query";
 
 interface HeroSectionProps {}
 
 export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
-  const isLaptop = useMediaQuery({ query: minWidth(1180) });
+  const isLaptop = useMediaQuery({ query: maxWidth(1180) });
 
   return (
     <section
       style={{ backgroundImage: "url(./hero-section-bg.png)" }}
-      className={`h-screen bg-cover overflow-hidden`}
+      className={`h-screen bg-cover`}
     >
       <Navigation />
       <Wrapper className={`relative h-[calc(100vh-100px)]`}>
@@ -28,8 +28,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
           priority
           quality={100}
           className={clsx(
-            `absolute top-[40%] translate-y-[-50%] `,
-            !isLaptop ? `left-[50%] translate-x-[-50%] max-w-[80vw]` : null
+            `left-[30%] absolute translate-y-[-50%] top-[40%] min-[600px]:top-[50%]`,
+            isLaptop ? `left-[50%] max-w-[80vw]` : null,
+            "translate-x-[-50%]"
           )}
           draggable={false}
         />
@@ -37,11 +38,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
         <Image
           alt="books"
           src={"/hero-section-books.png"}
-          width={(435.33 / 100) * (isLaptop ? 80 : 50)}
-          height={(450 / 100) * (isLaptop ? 80 : 50)}
+          width={(629 / 100) * (!isLaptop ? 80 : 50)}
+          height={(650 / 100) * (!isLaptop ? 80 : 50)}
           priority
           quality={100}
-          className={clsx(isLaptop ? `bottom-0 right-12 absolute` : `hidden`)}
+          className={clsx(
+            !isLaptop ? `bottom-[-15%] right-12 absolute` : `hidden`
+          )}
           draggable={false}
         />
       </Wrapper>

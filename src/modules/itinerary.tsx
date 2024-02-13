@@ -8,8 +8,8 @@ interface ItineraryProps {}
 
 export const Itinerary: React.FC<ItineraryProps> = ({}) => {
   return (
-    <Wrapper className={`py-28 md:py-36`}>
-      <div className={`pb-20 min-[920px]:pb-32`}>
+    <Wrapper className={`py-10 md:py-16`}>
+      <div className={`pb-16 min-[920px]:pb-24`}>
         <span
           className={clsx(
             BERKSHIRE_SWASH.className,

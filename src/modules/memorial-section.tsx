@@ -1,7 +1,9 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
+import { BERKSHIRE_SWASH } from "@/app/fonts";
 import {
   Carousel,
   CarouselContent,
@@ -32,54 +34,59 @@ const GUEST_DATA = [
   {
     image: "/guest/guest-3.png",
     name: "Mr. Harjeet Khanduja",
-    title: "Discription",
+    title: "Author",
     message:
       "A prolific international author of two business and management books, a poet, and a well-known speaker, he is well known for his writing approach, writing philosophy, vision, and contribution to business literature.",
   },
   {
     image: "/guest/guest-4.png",
     name: "Ms. Swapna Liddle",
-    title: "Discription",
+    title: "Author",
     message:
       "Known for her books and love for the city of Delhi, Ms. Swapna Liddle is a celebrated author and historian who has worked hard to raise awareness about the city's historic neighborhoods and buildings – through her writing, heritage walks, lectures, mainstream and social media.",
   },
   {
     image: "/guest/guest-5.png",
     name: "Mr. Ankit Jhamb",
-    title: "Discription",
+    title: "Author",
     message:
       "Mr. Ankit Jhamb is a senior leader and an excellent author, working with one of the world’s largest consulting organizations, Grant Thornton Bharat LLP. He is well known for producing three bestsellers in a span of three years.",
   },
   {
     image: "/guest/guest-6.png",
     name: "Ms. Sutapa Basu",
-    title: "Discription",
+    title: "Author",
     message: `With awards such as Best Fiction Award by AutHer Awards 2020, and First Prize of TOI’s "Write India Campaign 2016" to her name, Ms. Sutapa Basu dabbles in historical fiction. She works with publishing houses such as Oxford University Press and Readomania.`,
   },
   {
     image: "/guest/guest-7.png",
     name: "Dr. Harshali Singh",
-    title: "Discription",
+    title: "Author",
     message:
       "Delhi based member of the District Consumer Dispute Redressal Commission, Dr. Harshali Singh is a writer, an academician and an occupational therapist. She has also presided over crucial discussions with eminent personalities in fields of world peace and meditation.",
   },
   {
     image: "/guest/guest-8.png",
     name: "Mr. Vikas Dua",
-    title: "Discription",
+    title: "Author",
     message:
       "A leading voice of the HR community in India, Vikas Dua has spent over 18 years in the domain holding leadership positions across industry sectors. An ardent Vlogger and Blogger on HR practices, his articles are regularly featured in leading magazines.",
   },
 ];
 
 export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
+  const [changeButton, setChangeButton] = useState<boolean>(false);
   const isLaptop = useMediaQuery({ query: minWidth("lg") });
   const carouselButtonClasses = `h-[40px] w-[40px] lg:h-[60px] lg:w-[50px] rounded-[14px]`;
 
+  useEffect(() => {
+    setChangeButton(isLaptop);
+  }, [isLaptop]);
+
   return (
     <>
-      <Wrapper className={`pt-28 md:pt-36`}>
-        <div className={`pb-20 min-[920px]:pb-32`}>
+      <Wrapper className={`py-10 md:py-16`}>
+        <div className={`pb-16 min-[920px]:pb-24`}>
           <Image
             alt="Aalekh Logo"
             src={`/aalekh-logo.png`}
@@ -87,7 +94,10 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             height={100}
           />
           <span
-            className={`text-4xl ml-12 sm:ml-20 sm:text-5xl block font-bold text-primary`}
+            className={clsx(
+              BERKSHIRE_SWASH.className,
+              `text-4xl ml-12 sm:ml-20 sm:text-5xl block font-bold text-primary`
+            )}
           >
             A memorial
           </span>
@@ -124,7 +134,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           </div>
         </div>
         <div
-          className={`flex gap-10 md:gap-4 justify-between flex-col-reverse md:flex-row mt-20 mb-20 mb:mb-0`}
+          className={`flex gap-10 md:gap-4 justify-between flex-col-reverse md:flex-row mt-20 mb-20 md:mb-0`}
         >
           <div
             className={`w-full grid place-items-center translate-y-0 lg:translate-y-[-80px]`}
@@ -160,7 +170,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         style={{ backgroundImage: "url(./testimonial-bg.png)" }}
         className={`bg-cover overflow-hidden py-20 h-fit`}
       >
-        <div className={`pb-10 min-[920px]:pb-16`}>
+        <div className={`pb-6 min-[920px]:pb-10`}>
           <Image
             alt="Aalekh Logo"
             src={`/aalekh-logo.png`}
@@ -168,7 +178,10 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             height={100}
           />
           <span
-            className={`text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`}
+            className={clsx(
+              BERKSHIRE_SWASH.className,
+              `text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`
+            )}
           >
             Guests
           </span>
@@ -179,7 +192,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             loop: true,
           }}
         >
-          <CarouselContent className={`pb-6 sm:pb-12 lg:pb-0`}>
+          <CarouselContent className={`pb-10 sm:pb-12 lg:pb-0`}>
             {GUEST_DATA.map((g, i) => {
               return (
                 <CarouselItem key={i}>
@@ -219,7 +232,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             variant={"default"}
             className={clsx(
               carouselButtonClasses,
-              !isLaptop
+              !changeButton
                 ? `top-[100%] left-[48%] translate-x-[-100%]`
                 : "ml-[-40px]"
             )}
@@ -228,7 +241,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             variant={"default"}
             className={clsx(
               carouselButtonClasses,
-              !isLaptop
+              !changeButton
                 ? `top-[100%] right-[48%] translate-x-[100%]`
                 : "mr-[-40px]"
             )}
@@ -236,9 +249,9 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         </Carousel>
       </Wrapper>
 
-      <Wrapper className={`pb-28 md:pb-36`}>
+      <Wrapper className={`py-10 md:py-16`}>
         <div
-          className={`flex gap-10 md:gap-4 justify-between flex-col md:flex-row mt-40`}
+          className={`flex gap-10 md:gap-4 justify-between flex-col md:flex-row`}
         >
           <div className={`leading-6 font-semibold w-[100%]`}>
             <p className={`mb-4`}>

@@ -111,7 +111,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
           </SheetTrigger>
           <SheetContent
             className={clsx(
-              "max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw]"
+              "max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw] px-5 md:px-8 lg:px-16"
             )}
           >
             <SheetHeader>
@@ -124,7 +124,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
                 `my-16 flex flex-col gap-10 text-center`
               )}
             >
-              {navLinks()}
+              {navLinks("text-lg sm:text-2xl")}
             </div>
           </SheetContent>
         </Sheet>

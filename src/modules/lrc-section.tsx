@@ -10,8 +10,8 @@ interface LrcSectionProps {}
 
 export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
   return (
-    <Wrapper className={`py-28 md:py-36`}>
-      <div className={`pb-20 min-[920px]:pb-32`}>
+    <Wrapper className={`pt-10 md:pt-16`}>
+      <div className={`pb-16 min-[920px]:pb-24`}>
         <span className={`text-4xl sm:text-5xl block font-medium`}>
           Know About
         </span>
@@ -40,7 +40,7 @@ export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
             fostering an ideal environment for reading and conducting research
             activities.
           </p>
-          <p className={`mb-4`}>
+          <p>
             In addition to housing academic print and non-print collections from
             globally renowned publishers, the LRC features dedicated shelves for
             leisure reading too. Author Workshops, Webinars, Training Programs,
@@ -49,7 +49,7 @@ export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
           </p>
         </div>
         <div
-          className={`w-full grid place-items-center translate-y-0 lg:translate-y-[-80px]`}
+          className={`w-full grid place-items-center translate-y-0 pb-16 lg:pb-0 lg:translate-y-[-160px]`}
         >
           <Image
             alt="Sample Photo"
