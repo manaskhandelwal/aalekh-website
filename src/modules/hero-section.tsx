@@ -2,16 +2,24 @@
 
 import clsx from "clsx";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import { Navigation } from "@/components/navigation";
 import { Wrapper } from "@/components/wrapper";
-import { maxWidth } from "@/utils/media-query";
+import { minWidth } from "@/utils/media-query";
 
 interface HeroSectionProps {}
 
 export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
-  const isLaptop = useMediaQuery({ query: maxWidth(1180) });
+  const isLaptop = useMediaQuery({ query: minWidth(1180) });
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return;
 
   return (
     <section
@@ -29,24 +37,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
           quality={100}
           className={clsx(
             `left-[30%] absolute translate-y-[-50%] top-[40%] min-[600px]:top-[50%]`,
-            isLaptop ? `left-[50%] max-w-[80vw]` : null,
+            !isLaptop ? `left-[50%] max-w-[80vw]` : null,
             "translate-x-[-50%]"
           )}
           draggable={false}
         />
 
-        <Image
-          alt="books"
-          src={"/hero-section-books.png"}
-          width={(629 / 100) * (!isLaptop ? 80 : 50)}
-          height={(650 / 100) * (!isLaptop ? 80 : 50)}
-          priority
-          quality={100}
-          className={clsx(
-            !isLaptop ? `bottom-[-15%] right-12 absolute` : `hidden`
-          )}
-          draggable={false}
-        />
+        {isLaptop ? (
+          <Image
+            alt="books"
+            src={"/hero-section-books.png"}
+            width={(629 / 100) * (isLaptop ? 80 : 50)}
+            height={(650 / 100) * (isLaptop ? 80 : 50)}
+            priority
+            quality={100}
+            className={clsx(
+              isLaptop ? `bottom-[-15%] right-12 absolute` : null
+            )}
+            draggable={false}
+          />
+        ) : null}
       </Wrapper>
     </section>
   );
