@@ -126,7 +126,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           >
             <Image
               alt="Sample Photo"
-              src={`/memorial-masonry-1.png`}
+              src={`/memorial-masonry-3.png`}
               width={400}
               height={400}
               quality={100}
@@ -141,7 +141,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           >
             <Image
               alt="Sample Photo"
-              src={`/lrc-masonry.png`}
+              src={`/memorial-masonry-2.png`}
               width={400}
               height={400}
               quality={100}
@@ -249,7 +249,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         </Carousel>
       </Wrapper>
 
-      <Wrapper className={`py-10 md:py-16`}>
+      <Wrapper className={`py-10 md:py-16 lg:pt-40 `}>
         <div
           className={`flex gap-10 md:gap-4 justify-between flex-col md:flex-row`}
         >

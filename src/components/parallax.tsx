@@ -15,6 +15,7 @@ export const Parallax: React.FC<ParallaxProps> = ({
       bgImageAlt={alt}
       strength={300}
       className="h-[60vh] object-cover"
+      bgImageStyle={{ height: "80vh", objectFit: "cover" }}
     />
   );
 };
