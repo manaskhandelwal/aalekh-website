@@ -1,6 +1,6 @@
 "use client";
 
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,6 @@ import { useMediaQuery } from "react-responsive";
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import {
   Sheet,
-  SheetTrigger,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -21,8 +20,8 @@ import { minWidth } from "@/utils/media-query";
 interface NavigationProps {}
 
 const navigationLinksData = [
-  { label: "About Aalekh", herf: "#" },
-  { label: "About LRC", herf: "#" },
+  { label: "About Aalekh", herf: "#about-aalekh" },
+  { label: "About LRC", herf: "#about-lrc" },
   {
     label: (
       <span>
@@ -30,29 +29,16 @@ const navigationLinksData = [
         23
       </span>
     ),
-    herf: "#",
+    herf: "#memorial",
   },
-  { label: "Cerebrum", herf: "#" },
-  { label: "Contact Us", herf: "#" },
+  { label: "Cerebrum", herf: "#cerebrum" },
+  { label: "Itinerary", herf: "#itinerary" },
 ];
-
-const navLinks = (className?: string) =>
-  navigationLinksData.map(({ label, herf }, i) => {
-    return (
-      <Link
-        href={herf}
-        className={clsx(`hover:text-primary duration-200`, className)}
-        key={i}
-      >
-        {label}
-      </Link>
-    );
-  });
 
 export const Navigation: React.FC<NavigationProps> = ({}) => {
   const isLaptop = useMediaQuery({ query: minWidth(1180) });
   const isSmallScreen = useMediaQuery({ query: minWidth(480) });
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [logoWidth, setLogoWidth] = useState(149);
   const [logoHeight, setLogoHeight] = useState(50);
   const [mounted, setMounted] = useState(false);
@@ -75,6 +61,23 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
       />
     </Link>
   );
+
+  const navLinks = (className?: string) => {
+    return navigationLinksData.map(({ label, herf }, i) => {
+      return (
+        <Link
+          key={i}
+          href={herf}
+          className={clsx(`hover:text-primary duration-200`, className)}
+          onClick={(e) => {
+            setIsSidebarOpen(false);
+          }}
+        >
+          {label}
+        </Link>
+      );
+    });
+  };
 
   return mounted ? (
     <Wrapper className={`flex justify-between items-center py-6`}>
@@ -103,19 +106,41 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
           {navLinks()}
         </div>
       ) : (
-        <Sheet>
-          <SheetTrigger className={`grid`} aria-label={"Open Menu"}>
-            <HamburgerMenuIcon
-              className={`w-5 h-5 min-[340px]:w-7 min-[340px]:h-7 text-canary`}
-            />
-          </SheetTrigger>
+        <Sheet open={isSidebarOpen}>
+          {!isSidebarOpen ? (
+            <div
+              className={`grid cursor-pointer`}
+              aria-label={"Open Menu"}
+              onClick={() => setIsSidebarOpen(true)}
+            >
+              <HamburgerMenuIcon
+                className={`w-5 h-5 min-[340px]:w-7 min-[340px]:h-7`}
+              />
+            </div>
+          ) : null}
           <SheetContent
             className={clsx(
               "max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw] px-5 md:px-8 lg:px-16"
             )}
           >
             <SheetHeader>
-              <SheetTitle>{cerebrumLogo}</SheetTitle>
+              <div
+                className={`flex justify-between items-center flex-row mx-2 md:mx-8`}
+              >
+                <SheetTitle>{cerebrumLogo}</SheetTitle>{" "}
+                {isSidebarOpen ? (
+                  <div
+                    className={`grid cursor-pointer`}
+                    aria-label={"Close Menu"}
+                    onClick={() => setIsSidebarOpen(false)}
+                  >
+                    <Cross1Icon
+                      className="w-5 h-5 min-[340px]:w-7 min-[340px]:h-7"
+                      strokeWidth={2.7}
+                    />
+                  </div>
+                ) : null}
+              </div>
             </SheetHeader>
 
             <div

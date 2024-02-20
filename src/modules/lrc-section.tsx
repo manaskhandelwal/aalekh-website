@@ -10,7 +10,7 @@ interface LrcSectionProps {}
 
 export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
   return (
-    <Wrapper className={`pt-10 md:pt-16`}>
+    <Wrapper className={`pt-10 md:pt-16`} id="about-lrc">
       <div className={`pb-16 min-[920px]:pb-24`}>
         <span className={`text-4xl sm:text-5xl block font-medium`}>
           Know About

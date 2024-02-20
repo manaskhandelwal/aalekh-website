@@ -85,7 +85,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
 
   return (
     <>
-      <Wrapper className={`py-10 md:py-16`}>
+      <Wrapper className={`py-10 md:py-16`} id="memorial">
         <div className={`pb-16 min-[920px]:pb-24`}>
           <Image
             alt="Aalekh Logo"

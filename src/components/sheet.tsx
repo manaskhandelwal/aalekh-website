@@ -1,7 +1,6 @@
 "use client";
 
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-import { Cross1Icon } from "@radix-ui/react-icons";
 import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 import * as React from "react";
@@ -81,16 +80,6 @@ const SheetContent = React.forwardRef<
       {...props}
     >
       {children}
-      <SheetPrimitive.Close
-        className="absolute right-10 top-8 disabled:pointer-events-none"
-        aria-label={"Close Menu"}
-      >
-        <Cross1Icon
-          className="w-5 h-5 min-[340px]:w-7 min-[340px]:h-7"
-          strokeWidth={2.7}
-        />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
     </SheetPrimitive.Content>
   </SheetPortal>
 ));

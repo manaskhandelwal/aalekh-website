@@ -13,7 +13,7 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
     .map((_, i) => {
       return (
         <Image
-          alt="Sample Photo"
+          alt="Photo related to aalaekh"
           src={`/what-is-aalekh/sample-image-${i + 1}.jpg`}
           width={302 / 1.5}
           height={200 / 1.5}
@@ -22,8 +22,9 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
         />
       );
     });
+
   return (
-    <Wrapper className={`py-10 md:py-16`}>
+    <Wrapper className={`py-10 md:py-16`} id="cerebrum">
       <div
         className={`pb-16 min-[920px]:pb-24 flex items-center gap-5 min-[500px]:gap-10 flex-col min-[500px]:flex-row text-center min-[500px]:text-left`}
       >
