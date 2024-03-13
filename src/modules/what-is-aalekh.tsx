@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 
 interface WhatIsAalekhProps {}
 
@@ -29,7 +29,7 @@ export const WhatIsAalekh: React.FC<WhatIsAalekhProps> = ({}) => {
           What is
         </span>
         <span
-          className={clsx(
+          className={cn(
             BERKSHIRE_SWASH.className,
             `text-6xl sm:text-8xl block ml-14 sm:ml-16 leading-8 sm:leading-10`
           )}

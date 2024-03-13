@@ -1,12 +1,12 @@
 "use client";
 
-import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import { Navigation } from "@/components/navigation";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 import { minWidth } from "@/utils/media-query";
 
 interface HeroSectionProps {}
@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
           height={422.17}
           priority
           quality={100}
-          className={clsx(
+          className={cn(
             `left-[30%] absolute translate-y-[-50%] top-[40%] min-[600px]:top-[50%]`,
             !isLaptop ? `left-[50%] max-w-[80vw]` : null,
             "translate-x-[-50%]"
@@ -51,9 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
             height={(650 / 100) * (isLaptop ? 80 : 50)}
             priority
             quality={100}
-            className={clsx(
-              isLaptop ? `bottom-[-15%] right-12 absolute` : null
-            )}
+            className={cn(isLaptop ? `bottom-[-15%] right-12 absolute` : null)}
             draggable={false}
           />
         ) : null}

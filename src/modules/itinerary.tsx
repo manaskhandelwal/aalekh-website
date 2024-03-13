@@ -1,8 +1,8 @@
-import clsx from "clsx";
 import Image from "next/image";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 
 interface ItineraryProps {}
 
@@ -11,7 +11,7 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
     <Wrapper className={`py-10 md:py-16`} id="itinerary">
       <div className={`pb-16 min-[920px]:pb-24`}>
         <span
-          className={clsx(
+          className={cn(
             BERKSHIRE_SWASH.className,
             `text-6xl sm:text-8xl block leading-6 sm:leading-10`
           )}

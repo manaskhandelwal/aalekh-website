@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 
 interface CerebrumProps {}
 
@@ -36,7 +36,7 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
         />
         <div>
           <h5
-            className={clsx(
+            className={cn(
               BERKSHIRE_SWASH.className,
               `text-4xl sm:text-6xl mb-2`
             )}
@@ -44,9 +44,7 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
             Cerebrum
           </h5>
           <span
-            className={clsx(
-              `text-primary text-2xl sm:text-3xl block font-black`
-            )}
+            className={cn(`text-primary text-2xl sm:text-3xl block font-black`)}
           >
             Official Debating and Literary Society
           </span>

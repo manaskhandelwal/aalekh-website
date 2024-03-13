@@ -2,9 +2,9 @@
 
 import { ArrowUpIcon } from "@radix-ui/react-icons";
 import { useWindowScroll } from "@uidotdev/usehooks";
-import clsx from "clsx";
 
 import { Button } from "@/components/button";
+import { cn } from "@/utils/cn";
 
 interface ScrollToTopProps {}
 
@@ -15,7 +15,7 @@ export const ScrollToTop: React.FC<ScrollToTopProps> = ({}) => {
     <Button
       variant={"floating"}
       size={"rounded"}
-      className={clsx(
+      className={cn(
         `z-[999999] bottom-10 right-10`,
         y && y >= 600 ? "fixed" : "hidden"
       )}

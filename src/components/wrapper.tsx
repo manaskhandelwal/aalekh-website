@@ -1,5 +1,6 @@
-import clsx from "clsx";
 import { DetailedHTMLProps } from "react";
+
+import { cn } from "@/utils/cn";
 
 interface WrapperProps
   extends DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
@@ -13,7 +14,7 @@ export const Wrapper: React.FC<WrapperProps> = ({
 }) => {
   return (
     <section
-      className={clsx(
+      className={cn(
         `max-w-[1536px] mx-auto px-10 md:px-14 lg:px-16`,
         className
       )}

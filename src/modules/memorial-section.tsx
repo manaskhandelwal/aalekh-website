@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -12,6 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/carousel";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 import { minWidth } from "@/utils/media-query";
 
 interface MemorialSectionProps {}
@@ -94,7 +94,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             height={100}
           />
           <span
-            className={clsx(
+            className={cn(
               BERKSHIRE_SWASH.className,
               `text-4xl ml-12 sm:ml-20 sm:text-5xl block font-bold text-primary`
             )}
@@ -178,7 +178,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
             height={100}
           />
           <span
-            className={clsx(
+            className={cn(
               BERKSHIRE_SWASH.className,
               `text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`
             )}
@@ -230,7 +230,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           </CarouselContent>
           <CarouselPrevious
             variant={"default"}
-            className={clsx(
+            className={cn(
               carouselButtonClasses,
               !changeButton
                 ? `top-[100%] left-[48%] translate-x-[-100%]`
@@ -239,7 +239,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           />
           <CarouselNext
             variant={"default"}
-            className={clsx(
+            className={cn(
               carouselButtonClasses,
               !changeButton
                 ? `top-[100%] right-[48%] translate-x-[100%]`

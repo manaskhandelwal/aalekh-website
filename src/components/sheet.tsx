@@ -2,8 +2,9 @@
 
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
-import clsx from "clsx";
 import * as React from "react";
+
+import { cn } from "@/utils/cn";
 
 const Sheet = SheetPrimitive.Root;
 
@@ -21,7 +22,7 @@ const SheetOverlay = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
-    className={clsx(
+    className={cn(
       "fixed inset-0 z-50 bg-transparent backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
@@ -76,7 +77,7 @@ const SheetContent = React.forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
-      className={clsx(sheetVariants({ side, width, height }), className)}
+      className={cn(sheetVariants({ side, width, height }), className)}
       {...props}
     >
       {children}
@@ -88,9 +89,9 @@ SheetContent.displayName = SheetPrimitive.Content.displayName;
 const SheetHeader = ({
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
+}: React.React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={clsx(
+    className={cn(
       "flex flex-col space-y-2 text-center sm:text-left",
       className
     )}
@@ -104,7 +105,7 @@ const SheetFooter = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={clsx(
+    className={cn(
       "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
       className
     )}
@@ -119,7 +120,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={clsx("text-lg font-semibold w-fit", className)}
+    className={cn("text-lg font-semibold w-fit", className)}
     {...props}
   />
 ));
@@ -131,7 +132,7 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Description
     ref={ref}
-    className={clsx("text-sm", className)}
+    className={cn("text-sm", className)}
     {...props}
   />
 ));

@@ -1,7 +1,6 @@
 "use client";
 
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -15,6 +14,7 @@ import {
   SheetTitle,
 } from "@/components/sheet";
 import { Wrapper } from "@/components/wrapper";
+import { cn } from "@/utils/cn";
 import { minWidth } from "@/utils/media-query";
 
 interface NavigationProps {}
@@ -25,7 +25,7 @@ const navigationLinksData = [
   {
     label: (
       <span>
-        Aalekh Memorial 2<span className={clsx("text-primary")}>k</span>
+        Aalekh Memorial 2<span className={cn("text-primary")}>k</span>
         23
       </span>
     ),
@@ -68,7 +68,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
         <Link
           key={i}
           href={herf}
-          className={clsx(`hover:text-primary duration-200`, className)}
+          className={cn(`hover:text-primary duration-200`, className)}
           onClick={(e) => {
             setIsSidebarOpen(false);
           }}
@@ -102,7 +102,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
       </div>
 
       {isLaptop ? (
-        <div className={clsx(BERKSHIRE_SWASH.className, "flex gap-10")}>
+        <div className={cn(BERKSHIRE_SWASH.className, "flex gap-10")}>
           {navLinks()}
         </div>
       ) : (
@@ -119,7 +119,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
             </div>
           ) : null}
           <SheetContent
-            className={clsx(
+            className={cn(
               "max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw] px-5 md:px-8 lg:px-16"
             )}
           >
@@ -144,7 +144,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
             </SheetHeader>
 
             <div
-              className={clsx(
+              className={cn(
                 BERKSHIRE_SWASH.className,
                 `my-16 flex flex-col gap-10 text-center`
               )}
