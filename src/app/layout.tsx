@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "../styles/main.scss";
 import { CORMORANT_GARAMOND } from "@/app/fonts";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export const metadata: Metadata = {
   title: "Aalekh - Carnival of Books",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={CORMORANT_GARAMOND.className}>{children}</body>
+      <body className={CORMORANT_GARAMOND.className}>
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }
