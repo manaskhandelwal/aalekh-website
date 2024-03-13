@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "../styles/main.scss";
 import { CORMORANT_GARAMOND } from "@/app/fonts";
+import { FixedNavigation } from "@/components/navigation";
 import { ScrollToTop } from "@/components/scroll-to-top";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={CORMORANT_GARAMOND.className}>
+        <FixedNavigation />
         {children}
         <ScrollToTop />
       </body>

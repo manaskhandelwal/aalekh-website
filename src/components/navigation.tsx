@@ -1,9 +1,10 @@
 "use client";
 
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { useWindowScroll } from "@uidotdev/usehooks";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { DetailedHTMLProps, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import { BERKSHIRE_SWASH } from "@/app/fonts";
@@ -17,7 +18,8 @@ import { Wrapper } from "@/components/wrapper";
 import { cn } from "@/utils/cn";
 import { minWidth } from "@/utils/media-query";
 
-interface NavigationProps {}
+interface NavigationProps
+  extends DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {}
 
 const navigationLinksData = [
   { label: "About Aalekh", herf: "#about-aalekh" },
@@ -35,7 +37,10 @@ const navigationLinksData = [
   { label: "Itinerary", herf: "#itinerary" },
 ];
 
-export const Navigation: React.FC<NavigationProps> = ({}) => {
+export const Navigation: React.FC<NavigationProps> = ({
+  className,
+  ...props
+}) => {
   const isLaptop = useMediaQuery({ query: minWidth(1180) });
   const isSmallScreen = useMediaQuery({ query: minWidth(480) });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -80,7 +85,10 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
   };
 
   return mounted ? (
-    <Wrapper className={`flex justify-between items-center py-6`}>
+    <Wrapper
+      className={cn(`flex justify-between items-center py-6`, className)}
+      {...props}
+    >
       <div className={`flex gap-2`}>
         {cerebrumLogo}
 
@@ -120,13 +128,11 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
           ) : null}
           <SheetContent
             className={cn(
-              "max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw] px-5 md:px-8 lg:px-16"
+              "h-screen max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw]"
             )}
           >
             <SheetHeader>
-              <div
-                className={`flex justify-between items-center flex-row mx-2 md:mx-8`}
-              >
+              <div className={`flex justify-between items-center flex-row`}>
                 <SheetTitle>{cerebrumLogo}</SheetTitle>{" "}
                 {isSidebarOpen ? (
                   <div
@@ -156,4 +162,22 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
       )}
     </Wrapper>
   ) : null;
+};
+
+interface FixedNavigationProps {}
+
+export const FixedNavigation: React.FC<FixedNavigationProps> = ({}) => {
+  const [{ y }] = useWindowScroll();
+
+  return (
+    <div>
+      <Navigation
+        className={cn(
+          y && y >= 600 ? "fixed animate-in slide-in-from-top" : "hidden",
+          "z-[3000] top-0 left-0 right-0",
+          `bg-cover bg-white`
+        )}
+      />
+    </div>
+  );
 };

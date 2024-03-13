@@ -16,7 +16,7 @@ export const ScrollToTop: React.FC<ScrollToTopProps> = ({}) => {
       variant={"floating"}
       size={"rounded"}
       className={cn(
-        `z-[999999] bottom-10 right-10`,
+        `z-[2000] bottom-10 right-10`,
         y && y >= 600 ? "fixed" : "hidden"
       )}
       onClick={() => scrollTo({ left: 0, top: 0, behavior: "smooth" })}
