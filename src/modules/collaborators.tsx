@@ -76,7 +76,7 @@ export const Collaborators: React.FC<CollaboratorsProps> = ({}) => {
       </div>
       <div className={`flex gap-10 border-8 border-primary rounded-3xl`}>
         <div className={`basis-[55%] p-6`}>
-          <h4 className={`mb-8 text-center font-bold text-3xl`}>Sponsers</h4>
+          <h4 className={`mb-8 text-center font-bold text-3xl`}>Sponsors</h4>
           <div className={`flex gap-20 justify-center items-center`}>
             {sponsersData.map((data, i) => (
               <CollaboratorItem data={data} key={i} />
