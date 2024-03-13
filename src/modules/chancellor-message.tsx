@@ -31,7 +31,7 @@ export const ChancellorMessage: React.FC<ChancellorMessageProps> = ({}) => {
       <div
         className={`flex min-[920px]:gap-20 xl:gap-28 flex-col min-[920px]:flex-row`}
       >
-        <div className={`leading-6 font-semibold`}>
+        <div className={`leading-6 font-semibold para`}>
           <p className={`mb-4`}>
             Literature has, for centuries, been a hugely powerful medium, with
             its commentaries on society inspiring countless revolutions and

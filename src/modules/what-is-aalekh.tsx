@@ -37,7 +37,7 @@ export const WhatIsAalekh: React.FC<WhatIsAalekhProps> = ({}) => {
           aale<span className={`text-primary`}>k</span>h?
         </span>
       </div>
-      <div className={`leading-6 font-semibold`}>
+      <div className={`leading-6 font-semibold para`}>
         <p className={`mb-4`}>
           Sanskrit for ‘writing’, <strong>AALKEH</strong> is Bennett
           University’s annual literary fest that aims to showcase

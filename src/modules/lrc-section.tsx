@@ -32,7 +32,7 @@ export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
       <div
         className={`flex gap-10 md:gap-20 justify-between flex-col md:flex-row`}
       >
-        <div className={`leading-6 font-semibold w-[100%]`}>
+        <div className={`leading-6 font-semibold w-[100%] para`}>
           <p className={`mb-4`}>
             Libraries at Bennet University are popularly known as the{" "}
             <strong>Learning Resource Centre (LRC)</strong>. These LRCs have

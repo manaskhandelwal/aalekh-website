@@ -105,7 +105,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         <div
           className={`flex gap-10 md:gap-4 justify-between flex-col md:flex-row`}
         >
-          <div className={`leading-6 font-semibold w-[100%]`}>
+          <div className={`leading-6 font-semibold w-[100%] para`}>
             <p className={`mb-4`}>
               Libraries at Bennet University are popularly known as the Learning
               Resource Centre (LRC). These LRCs have reimagined traditional
@@ -147,7 +147,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
               quality={100}
             />
           </div>
-          <div className={`leading-6 font-semibold w-[100%]`}>
+          <div className={`leading-6 font-semibold w-[100%] para`}>
             <p className={`mb-4`}>
               Libraries at Bennet University are popularly known as the Learning
               Resource Centre (LRC). These LRCs have reimagined traditional
@@ -214,7 +214,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
                     <div
                       className={`leading-6 font-semibold flex-1 mt-6 lg:mt-[15%] text-center lg:text-left`}
                     >
-                      <p className={`m-auto w-[90%]`}>
+                      <p className={`m-auto w-[90%] para`}>
                         <span
                           className={`text-primary text-5xl mr-1 leading-[0px] hidden lg:inline-block`}
                         >
@@ -253,7 +253,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         <div
           className={`flex gap-10 md:gap-4 justify-between flex-col md:flex-row`}
         >
-          <div className={`leading-6 font-semibold w-[100%]`}>
+          <div className={`leading-6 font-semibold w-[100%] para`}>
             <p className={`mb-4`}>
               The Guest of Honour at AALEKH 2K23 was Dr. Kiran Bedi - Former LG
               Puducherry & India&apos;s First Woman IPS. Dr. Ramesh Pokhriyal

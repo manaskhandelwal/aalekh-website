@@ -68,7 +68,7 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
         </div>
       </div>
 
-      <div className={`leading-6 font-semibold`}>
+      <div className={`leading-6 font-semibold para`}>
         <p className={`mb-4`}>
           Akin to the largest part of the brain that conditions emotions, speech
           and the five senses of the human body,{" "}

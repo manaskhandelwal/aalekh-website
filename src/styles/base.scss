@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth !important;
 }
+
+.para {
+  @apply text-xl;
+}
