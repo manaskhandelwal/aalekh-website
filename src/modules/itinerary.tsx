@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { BERKSHIRE_SWASH } from "@/app/fonts";
 import { Wrapper } from "@/components/wrapper";
 import { cn } from "@/utils/cn";
@@ -20,14 +18,16 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
         </span>
       </div>
       <div className={`w-full`}>
-        <Image
+        {/* <Image
           alt="Itinerary of Aalekh 2024"
           src={"/itinerary.jpg"}
           width={1000}
           height={703}
           quality={100}
           className={`m-auto`}
-        />
+        /> */}
+
+        <p className={`text-center para`}>comming soon</p>
       </div>
     </Wrapper>
   );
