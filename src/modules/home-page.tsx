@@ -3,6 +3,7 @@
 import { Parallax } from "@/components/parallax";
 import { Cerebrum } from "@/modules/cerebrum";
 import { ChancellorMessage } from "@/modules/chancellor-message";
+import { Collaborators } from "@/modules/collaborators";
 import { Footer } from "@/modules/footer";
 import { HeroSection } from "@/modules/hero-section";
 import { Itinerary } from "@/modules/itinerary";
@@ -26,6 +27,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <Itinerary />
       <Parallax image="/parallax-2.jpg" />
       <Cerebrum />
+      <Collaborators />
       <Footer />
     </>
   );
