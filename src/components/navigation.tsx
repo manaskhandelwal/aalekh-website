@@ -35,24 +35,23 @@ const navigationLinksData = [
   },
   { label: "Cerebrum", herf: "#cerebrum" },
   { label: "Itinerary", herf: "#itinerary" },
+  { label: "Collaborators", herf: "#collaborators" },
 ];
 
 export const Navigation: React.FC<NavigationProps> = ({
   className,
   ...props
 }) => {
-  const isLaptop = useMediaQuery({ query: minWidth(1180) });
+  const isLaptop = useMediaQuery({ query: minWidth(1280) });
   const isSmallScreen = useMediaQuery({ query: minWidth(480) });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [logoWidth, setLogoWidth] = useState(149);
-  const [logoHeight, setLogoHeight] = useState(50);
+  const [logoWidth, setLogoWidth] = useState(163);
+  const [logoHeight, setLogoHeight] = useState(55);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setLogoWidth(isLaptop ? 149 : 137);
-    setLogoHeight(isLaptop ? 50 : 46);
     setMounted(true);
-  }, [isLaptop]);
+  }, []);
 
   const cerebrumLogo = (
     <Link href={"https://library.bennett.edu.in/"} target="_blank">
@@ -60,7 +59,7 @@ export const Navigation: React.FC<NavigationProps> = ({
         alt="lrc and cerebrum logo"
         src={"/lrc-cerebrum-logo.png"}
         width={logoWidth}
-        height={50}
+        height={logoHeight}
         priority
         quality={100}
       />

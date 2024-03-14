@@ -9,3 +9,7 @@ html {
 .para {
   @apply text-xl;
 }
+
+.heading {
+  @apply text-5xl sm:text-7xl md:text-8xl block leading-6 sm:leading-10;
+}

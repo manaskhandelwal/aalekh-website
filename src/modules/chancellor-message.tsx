@@ -19,12 +19,7 @@ export const ChancellorMessage: React.FC<ChancellorMessageProps> = ({}) => {
         <span className={`text-4xl sm:text-5xl block font-medium`}>
           Chancellor’s
         </span>
-        <span
-          className={cn(
-            BERKSHIRE_SWASH.className,
-            `text-6xl sm:text-8xl block ml-10 sm:ml-16 leading-6 sm:leading-10`
-          )}
-        >
+        <span className={cn(BERKSHIRE_SWASH.className, `heading ml-10`)}>
           mess<span className={`text-primary`}>a</span>ge
         </span>
       </div>

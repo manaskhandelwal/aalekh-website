@@ -29,10 +29,7 @@ export const WhatIsAalekh: React.FC<WhatIsAalekhProps> = ({}) => {
           What is
         </span>
         <span
-          className={cn(
-            BERKSHIRE_SWASH.className,
-            `text-6xl sm:text-8xl block ml-14 sm:ml-16 leading-8 sm:leading-10`
-          )}
+          className={cn(BERKSHIRE_SWASH.className, `heading ml-14 sm:ml-16`)}
         >
           aale<span className={`text-primary`}>k</span>h?
         </span>

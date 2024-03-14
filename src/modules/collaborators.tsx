@@ -65,26 +65,25 @@ export const Collaborators: React.FC<CollaboratorsProps> = ({}) => {
   return (
     <Wrapper className={`py-10 md:py-16`} id="Collaborators">
       <div className={`pb-16 min-[920px]:pb-24`}>
-        <span
-          className={cn(
-            BERKSHIRE_SWASH.className,
-            `text-6xl sm:text-8xl block leading-6 sm:leading-10`
-          )}
-        >
+        <span className={cn(BERKSHIRE_SWASH.className, `heading`)}>
           Collabor<span className={`text-primary`}>a</span>tors
         </span>
       </div>
-      <div className={`flex gap-10 border-8 border-primary rounded-3xl`}>
+      <div
+        className={`flex gap-10 border-8 border-primary rounded-3xl flex-col md:flex-row`}
+      >
         <div className={`basis-[55%] p-6`}>
           <h4 className={`mb-8 text-center font-bold text-3xl`}>Sponsors</h4>
-          <div className={`flex gap-20 justify-center items-center`}>
+          <div className={`flex gap-10 md:gap-20 justify-center items-center`}>
             {sponsersData.map((data, i) => (
               <CollaboratorItem data={data} key={i} />
             ))}
           </div>
         </div>
 
-        <div className={`basis-[45%] p-6 bg-primary text-white rounded-r-xl`}>
+        <div
+          className={`basis-[45%] p-6 bg-primary text-white rounded-b-xl md:rounded-r-xl`}
+        >
           <h4 className={`mb-8 text-center font-bold text-3xl`}>
             Knowledge Partner
           </h4>

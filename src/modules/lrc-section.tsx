@@ -18,7 +18,7 @@ export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
         <span
           className={cn(
             BERKSHIRE_SWASH.className,
-            `text-6xl sm:text-8xl block ml-10 sm:ml-16 leading-[55px] sm:leading-[95px]`
+            `heading ml-10 sm:ml-16 leading-[100px]`
           )}
         >
           L<span className={`text-primary`}>R</span>C
