@@ -16,7 +16,7 @@ import { minWidth } from "@/utils/media-query";
 
 interface MemorialSectionProps {}
 
-const GUEST_DATA = [
+const PREVIOUS_GUEST_DATA = [
   {
     image: "/previous-guests/previous-guest-1.webp",
     name: "Dr. Ramesh Pokhriyal 'Nishank'",
@@ -183,7 +183,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
               `text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`
             )}
           >
-            Guests
+            Previous Guests
           </span>
         </div>
         <Carousel
@@ -193,7 +193,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           }}
         >
           <CarouselContent className={`pb-10 sm:pb-12 lg:pb-0`}>
-            {GUEST_DATA.map((g, i) => {
+            {PREVIOUS_GUEST_DATA.map((g, i) => {
               return (
                 <CarouselItem key={i}>
                   <div className={`flex gap-4 flex-col lg:flex-row`}>
