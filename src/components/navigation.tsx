@@ -24,16 +24,8 @@ interface NavigationProps
 const navigationLinksData = [
   { label: "About Aalekh", herf: "#about-aalekh" },
   { label: "About LRC", herf: "#about-lrc" },
+  { label: "Authors", herf: "#authors" },
   { label: "Itinerary", herf: "#itinerary" },
-  {
-    label: (
-      <span>
-        Aalekh Memorial 2<span className={cn("text-primary")}>k</span>
-        23
-      </span>
-    ),
-    herf: "#memorial",
-  },
   { label: "Cerebrum", herf: "#cerebrum" },
   { label: "Collaborators", herf: "#collaborators" },
 ];

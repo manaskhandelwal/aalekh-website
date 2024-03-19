@@ -91,7 +91,8 @@ export const Authors: React.FC<AuthorsProps> = ({}) => {
   return (
     <Wrapper
       style={{ backgroundImage: "url(./testimonial-bg.webp)" }}
-      className={`bg-cover overflow-hidden py-20 h-fit`}
+      className={`bg-cover overflow-hidden py-32 h-fit`}
+      id="authors"
     >
       <div className={`pb-6 min-[920px]:pb-10`}>
         <Image
