@@ -40,7 +40,7 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
           className={cn(INTER.className, `text-sm font-medium`)}
         >
           <div className={`w-full flex justify-center mb-4`}>
-            <TabsList className={`bg-zinc-100 w-fit`}>
+            <TabsList className={`bg-zinc-200 w-fit`}>
               <TabsTrigger value="day1">
                 {!isLargeScreen ? "Day 1" : `Day 1: Wednesday, 20`}
                 {isLargeScreen ? <sup>th</sup> : null}
