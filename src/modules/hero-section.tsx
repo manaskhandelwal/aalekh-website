@@ -19,43 +19,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return;
-
   return (
     <section
       style={{ backgroundImage: "url(./hero-section-bg.png)" }}
       className={`h-screen bg-cover`}
     >
       <Navigation />
-      <Wrapper className={`relative h-[calc(100vh-100px)]`}>
-        <Image
-          alt="aalekh logo and"
-          src={"/aalekh-hero-banner.png"}
-          width={580}
-          height={422.17}
-          priority
-          quality={100}
-          className={cn(
-            `left-[30%] absolute translate-y-[-50%] top-[40%] min-[600px]:top-[50%]`,
-            !isLaptop ? `left-[50%] max-w-[80vw]` : null,
-            "translate-x-[-50%]"
-          )}
-          draggable={false}
-        />
-
-        {isLaptop ? (
+      {mounted ? (
+        <Wrapper className={`relative h-[calc(100vh-100px)]`}>
           <Image
-            alt="books"
-            src={"/hero-section-books.png"}
-            width={(629 / 100) * (isLaptop ? 80 : 50)}
-            height={(650 / 100) * (isLaptop ? 80 : 50)}
+            alt="aalekh logo and"
+            src={"/aalekh-hero-banner.png"}
+            width={580}
+            height={422.17}
             priority
             quality={100}
-            className={cn(isLaptop ? `bottom-[-15%] right-12 absolute` : null)}
+            className={cn(
+              `left-[30%] absolute translate-y-[-50%] top-[40%] min-[600px]:top-[50%]`,
+              !isLaptop ? `left-[50%] max-w-[80vw]` : null,
+              "translate-x-[-50%]"
+            )}
             draggable={false}
           />
-        ) : null}
-      </Wrapper>
+
+          {isLaptop ? (
+            <Image
+              alt="books"
+              src={"/hero-section-books.png"}
+              width={(629 / 100) * (isLaptop ? 80 : 50)}
+              height={(650 / 100) * (isLaptop ? 80 : 50)}
+              priority
+              quality={100}
+              className={cn(
+                isLaptop ? `bottom-[-15%] right-12 absolute` : null
+              )}
+              draggable={false}
+            />
+          ) : null}
+        </Wrapper>
+      ) : null}
     </section>
   );
 };
