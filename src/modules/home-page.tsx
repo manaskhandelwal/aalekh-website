@@ -23,9 +23,9 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <LrcSection />
       <Parallax image="/parallax-2.webp" />
       <MemorialSection />
-      <Parallax image="/parallax-1.webp" />
+      <Parallax image="/parallax-3.webp" />
       <Itinerary />
-      <Parallax image="/parallax-2.webp" />
+      <Parallax image="/parallax-4.webp" />
       <Cerebrum />
       <Collaborators />
       <Footer />
