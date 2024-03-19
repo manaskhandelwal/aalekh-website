@@ -15,8 +15,8 @@ export const WhatIsAalekh: React.FC<WhatIsAalekhProps> = ({}) => {
         <Image
           alt={`What is Aalekh ${i + 1}`}
           src={`/what-is-aalekh/what-is-aalekh-${i + 1}.webp`}
-          width={302 / 1.5}
-          height={200 / 1.5}
+          width={201}
+          height={133}
           key={i}
           className={`ml-3`}
         />

@@ -14,9 +14,9 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
       return (
         <Image
           alt="Photo related to aalaekh"
-          src={`/what-is-aalekh/sample-image-${i + 1}.jpg`}
-          width={302 / 1.5}
-          height={200 / 1.5}
+          src={`/what-is-aalekh/what-is-aalekh-${i + 1}.webp`}
+          width={201}
+          height={133}
           key={i}
           className={`ml-3`}
         />
