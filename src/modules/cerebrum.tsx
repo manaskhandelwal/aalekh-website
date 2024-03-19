@@ -30,7 +30,7 @@ export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
       >
         <Image
           alt="Cerebrum Logo"
-          src={`/cerebrum-logo.jpg`}
+          src={`/cerebrum-logo.webp`}
           width={(203 / 100) * 70}
           height={(160 / 100) * 70}
         />

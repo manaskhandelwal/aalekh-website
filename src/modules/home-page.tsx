@@ -19,13 +19,13 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <HeroSection />
       <ChancellorMessage />
       <WhatIsAalekh />
-      <Parallax image="/parallax-1.jpg" />
+      <Parallax image="/parallax-1.webp" />
       <LrcSection />
-      <Parallax image="/parallax-2.jpg" />
+      <Parallax image="/parallax-2.webp" />
       <MemorialSection />
-      <Parallax image="/parallax-1.jpg" />
+      <Parallax image="/parallax-1.webp" />
       <Itinerary />
-      <Parallax image="/parallax-2.jpg" />
+      <Parallax image="/parallax-2.webp" />
       <Cerebrum />
       <Collaborators />
       <Footer />

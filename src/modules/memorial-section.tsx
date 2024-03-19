@@ -126,7 +126,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           >
             <Image
               alt="Sample Photo"
-              src={`/memorial-masonry-3.png`}
+              src={`/memorial-masonry-3.webp`}
               width={400}
               height={400}
               quality={100}
@@ -141,7 +141,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           >
             <Image
               alt="Sample Photo"
-              src={`/memorial-masonry-2.png`}
+              src={`/memorial-masonry-2.webp`}
               width={400}
               height={400}
               quality={100}
@@ -167,7 +167,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
       </Wrapper>
 
       <Wrapper
-        style={{ backgroundImage: "url(./testimonial-bg.png)" }}
+        style={{ backgroundImage: "url(./testimonial-bg.webp)" }}
         className={`bg-cover overflow-hidden py-20 h-fit`}
       >
         <div className={`pb-6 min-[920px]:pb-10`}>
@@ -276,7 +276,7 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
           >
             <Image
               alt="Sample Photo"
-              src={`/memorial-masonry-1.png`}
+              src={`/memorial-masonry-1.webp`}
               width={400}
               height={400}
               quality={100}

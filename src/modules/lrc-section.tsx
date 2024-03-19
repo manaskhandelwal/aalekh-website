@@ -53,7 +53,7 @@ export const LrcSection: React.FC<LrcSectionProps> = ({}) => {
         >
           <Image
             alt="Sample Photo"
-            src={`/lrc-masonry.png`}
+            src={`/lrc-masonry.webp`}
             width={400}
             height={402}
           />
