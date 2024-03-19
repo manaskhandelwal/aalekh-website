@@ -8,13 +8,13 @@ import { cn } from "@/utils/cn";
 interface CerebrumProps {}
 
 export const Cerebrum: React.FC<CerebrumProps> = ({}) => {
-  const srollerImages = Array(11)
+  const srollerImages = Array(10)
     .fill(0)
     .map((_, i) => {
       return (
         <Image
           alt="Photo related to aalaekh"
-          src={`/what-is-aalekh/what-is-aalekh-${i + 1}.webp`}
+          src={`/cerebrum/cerebrum-${i + 1}.webp`}
           width={201}
           height={133}
           key={i}
