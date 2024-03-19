@@ -1,6 +1,7 @@
 "use client";
 
 import { Parallax } from "@/components/parallax";
+import { Authors } from "@/modules/authors";
 import { Cerebrum } from "@/modules/cerebrum";
 import { ChancellorMessage } from "@/modules/chancellor-message";
 import { Collaborators } from "@/modules/collaborators";
@@ -21,6 +22,7 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <WhatIsAalekh />
       <Parallax image="/parallax-1.webp" />
       <LrcSection />
+      <Authors />
       <Parallax image="/parallax-2.webp" />
       <Itinerary />
       <Parallax image="/parallax-4.webp" />
