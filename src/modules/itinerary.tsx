@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import { BERKSHIRE_SWASH, INTER } from "@/app/fonts";
@@ -20,8 +21,13 @@ interface ItineraryProps {}
 
 export const Itinerary: React.FC<ItineraryProps> = ({}) => {
   const isLargeScreen = useMediaQuery({ query: minWidth(620) });
+  const [mounted, setMounted] = useState(false);
 
-  return (
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted ? (
     <Wrapper className={`py-10 md:py-16`} id="itinerary">
       <div className={`pb-16 min-[920px]:pb-24`}>
         <span className={cn(BERKSHIRE_SWASH.className, `heading`)}>
@@ -367,5 +373,5 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
         </Tabs>
       </div>
     </Wrapper>
-  );
+  ) : null;
 };
