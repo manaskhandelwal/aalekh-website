@@ -22,10 +22,10 @@ export const HomePage: React.FC<HomePageProps> = ({}) => {
       <Parallax image="/parallax-1.webp" />
       <LrcSection />
       <Parallax image="/parallax-2.webp" />
-      <MemorialSection />
-      <Parallax image="/parallax-3.webp" />
       <Itinerary />
       <Parallax image="/parallax-4.webp" />
+      <MemorialSection />
+      <Parallax image="/parallax-3.webp" />
       <Cerebrum />
       <Collaborators />
       <Footer />

@@ -63,7 +63,7 @@ export const CollaboratorItem: React.FC<CollaboratorItemProps> = ({ data }) => {
 
 export const Collaborators: React.FC<CollaboratorsProps> = ({}) => {
   return (
-    <Wrapper className={`py-10 md:py-16`} id="Collaborators">
+    <Wrapper className={`py-10 md:py-16`} id="collaborators">
       <div className={`pb-16 min-[920px]:pb-24`}>
         <span className={cn(BERKSHIRE_SWASH.className, `heading`)}>
           Collabor<span className={`text-primary`}>a</span>tors

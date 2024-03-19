@@ -24,6 +24,7 @@ interface NavigationProps
 const navigationLinksData = [
   { label: "About Aalekh", herf: "#about-aalekh" },
   { label: "About LRC", herf: "#about-lrc" },
+  { label: "Itinerary", herf: "#itinerary" },
   {
     label: (
       <span>
@@ -34,7 +35,6 @@ const navigationLinksData = [
     herf: "#memorial",
   },
   { label: "Cerebrum", herf: "#cerebrum" },
-  { label: "Itinerary", herf: "#itinerary" },
   { label: "Collaborators", herf: "#collaborators" },
 ];
 
