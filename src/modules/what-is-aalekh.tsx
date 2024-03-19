@@ -13,8 +13,8 @@ export const WhatIsAalekh: React.FC<WhatIsAalekhProps> = ({}) => {
     .map((_, i) => {
       return (
         <Image
-          alt="Sample Photo"
-          src={`/what-is-aalekh/sample-image-${i + 1}.jpg`}
+          alt={`What is Aalekh ${i + 1}`}
+          src={`/what-is-aalekh/what-is-aalekh-${i + 1}.webp`}
           width={302 / 1.5}
           height={200 / 1.5}
           key={i}
