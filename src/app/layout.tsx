@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 import "../styles/main.scss";
@@ -22,6 +23,7 @@ export default function RootLayout({
         <FixedNavigation />
         {children}
         <ScrollToTop />
+        <Analytics />
       </body>
     </html>
   );
