@@ -18,55 +18,55 @@ interface MemorialSectionProps {}
 
 const GUEST_DATA = [
   {
-    image: "/guest/guest-1.png",
+    image: "/previous-guests/previous-guest-1.webp",
     name: "Dr. Ramesh Pokhriyal 'Nishank'",
     title: "The Hon’ble Chief Guest and Former Union Minister of Education",
     message:
       "Having written and published more than 110 books across genres, Dr. Ramesh Pokhriyal 'Nishank' has been known as someone who always “listens” and is “open to ideas”. His compositions have been included in the curriculum of several universities in India as well as abroad.",
   },
   {
-    image: "/guest/guest-2.png",
+    image: "/previous-guests/previous-guest-2.webp",
     name: "Dr. Kiran Bedi",
     title: "IPS",
     message:
       "India's first and the highest ranked woman officer in the Indian Police Service, Dr. Kiran Bedi is also a brilliant author herself. Subject of her works include humane policing and leadership. She also contributes to leading newspapers and magazines as a columnist.",
   },
   {
-    image: "/guest/guest-3.png",
+    image: "/previous-guests/previous-guest-3.webp",
     name: "Mr. Harjeet Khanduja",
     title: "Author",
     message:
       "A prolific international author of two business and management books, a poet, and a well-known speaker, he is well known for his writing approach, writing philosophy, vision, and contribution to business literature.",
   },
   {
-    image: "/guest/guest-4.png",
+    image: "/previous-guests/previous-guest-4.webp",
     name: "Ms. Swapna Liddle",
     title: "Author",
     message:
       "Known for her books and love for the city of Delhi, Ms. Swapna Liddle is a celebrated author and historian who has worked hard to raise awareness about the city's historic neighborhoods and buildings – through her writing, heritage walks, lectures, mainstream and social media.",
   },
   {
-    image: "/guest/guest-5.png",
+    image: "/previous-guests/previous-guest-5.webp",
     name: "Mr. Ankit Jhamb",
     title: "Author",
     message:
       "Mr. Ankit Jhamb is a senior leader and an excellent author, working with one of the world’s largest consulting organizations, Grant Thornton Bharat LLP. He is well known for producing three bestsellers in a span of three years.",
   },
   {
-    image: "/guest/guest-6.png",
+    image: "/previous-guests/previous-guest-6.webp",
     name: "Ms. Sutapa Basu",
     title: "Author",
     message: `With awards such as Best Fiction Award by AutHer Awards 2020, and First Prize of TOI’s "Write India Campaign 2016" to her name, Ms. Sutapa Basu dabbles in historical fiction. She works with publishing houses such as Oxford University Press and Readomania.`,
   },
   {
-    image: "/guest/guest-7.png",
+    image: "/previous-guests/previous-guest-7.webp",
     name: "Dr. Harshali Singh",
     title: "Author",
     message:
       "Delhi based member of the District Consumer Dispute Redressal Commission, Dr. Harshali Singh is a writer, an academician and an occupational therapist. She has also presided over crucial discussions with eminent personalities in fields of world peace and meditation.",
   },
   {
-    image: "/guest/guest-8.png",
+    image: "/previous-guests/previous-guest-8.webp",
     name: "Mr. Vikas Dua",
     title: "Author",
     message:
