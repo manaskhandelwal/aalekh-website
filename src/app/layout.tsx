@@ -2,6 +2,8 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 import "../styles/main.scss";
+import { Footer } from "../modules/footer";
+
 import { CORMORANT_GARAMOND } from "@/app/fonts";
 import { FixedNavigation } from "@/components/navigation";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -24,6 +26,7 @@ export default function RootLayout({
         {children}
         <ScrollToTop />
         <Analytics />
+        <Footer />
       </body>
     </html>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -166,88 +168,90 @@ export const MemorialSection: React.FC<MemorialSectionProps> = ({}) => {
         </div>
       </Wrapper>
 
-      <Wrapper
+      <div
         style={{ backgroundImage: "url(./testimonial-bg.webp)" }}
         className={`bg-cover overflow-hidden py-20 h-fit`}
       >
-        <div className={`pb-6 min-[920px]:pb-10`}>
-          <Image
-            alt="Aalekh Logo"
-            src={`/aalekh-logo.png`}
-            width={289}
-            height={100}
-          />
-          <span
-            className={cn(
-              BERKSHIRE_SWASH.className,
-              `text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`
-            )}
+        <Wrapper>
+          <div className={`pb-6 min-[920px]:pb-10`}>
+            <Image
+              alt="Aalekh Logo"
+              src={`/aalekh-logo.png`}
+              width={289}
+              height={100}
+            />
+            <span
+              className={cn(
+                BERKSHIRE_SWASH.className,
+                `text-4xl ml-20 sm:ml-32 sm:text-5xl block font-bold text-primary`
+              )}
+            >
+              Previous Guests
+            </span>
+          </div>
+          <Carousel
+            className={`w-full lg:w-2/3 m-auto`}
+            opts={{
+              loop: true,
+            }}
           >
-            Previous Guests
-          </span>
-        </div>
-        <Carousel
-          className={`w-full lg:w-2/3 m-auto`}
-          opts={{
-            loop: true,
-          }}
-        >
-          <CarouselContent className={`pb-10 sm:pb-12 lg:pb-0`}>
-            {PREVIOUS_GUEST_DATA.map((g, i) => {
-              return (
-                <CarouselItem key={i}>
-                  <div className={`flex gap-4 flex-col lg:flex-row`}>
-                    <div className={`flex-1 flex flex-col items-center`}>
-                      <Image
-                        alt={`Photo of ${g.name}`}
-                        src={g.image}
-                        width={360}
-                        height={360}
-                      />
-                      <div className={`text-center`}>
-                        <h4 className={`text-2xl font-black`}>{g.name}</h4>
-                        <p className={`w-2/3 m-auto mt-1 font-semibold`}>
-                          {g.title}
+            <CarouselContent className={`pb-10 sm:pb-12 lg:pb-0`}>
+              {PREVIOUS_GUEST_DATA.map((g, i) => {
+                return (
+                  <CarouselItem key={i}>
+                    <div className={`flex gap-4 flex-col lg:flex-row`}>
+                      <div className={`flex-1 flex flex-col items-center`}>
+                        <Image
+                          alt={`Photo of ${g.name}`}
+                          src={g.image}
+                          width={360}
+                          height={360}
+                        />
+                        <div className={`text-center`}>
+                          <h4 className={`text-2xl font-black`}>{g.name}</h4>
+                          <p className={`w-2/3 m-auto mt-1 font-semibold`}>
+                            {g.title}
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        className={`leading-6 font-semibold flex-1 mt-6 lg:mt-[15%] text-center lg:text-left`}
+                      >
+                        <p className={`m-auto w-[90%] para`}>
+                          <span
+                            className={`text-primary text-5xl mr-1 leading-[0px] hidden lg:inline-block`}
+                          >
+                            &#x201C;
+                          </span>
+                          {g.message}
                         </p>
                       </div>
                     </div>
-                    <div
-                      className={`leading-6 font-semibold flex-1 mt-6 lg:mt-[15%] text-center lg:text-left`}
-                    >
-                      <p className={`m-auto w-[90%] para`}>
-                        <span
-                          className={`text-primary text-5xl mr-1 leading-[0px] hidden lg:inline-block`}
-                        >
-                          &#x201C;
-                        </span>
-                        {g.message}
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-          <CarouselPrevious
-            variant={"default"}
-            className={cn(
-              carouselButtonClasses,
-              !changeButton
-                ? `top-[100%] left-[48%] translate-x-[-100%]`
-                : "ml-[-40px]"
-            )}
-          />
-          <CarouselNext
-            variant={"default"}
-            className={cn(
-              carouselButtonClasses,
-              !changeButton
-                ? `top-[100%] right-[48%] translate-x-[100%]`
-                : "mr-[-40px]"
-            )}
-          />
-        </Carousel>
-      </Wrapper>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious
+              variant={"default"}
+              className={cn(
+                carouselButtonClasses,
+                !changeButton
+                  ? `top-[100%] left-[48%] translate-x-[-100%]`
+                  : "ml-[-40px]"
+              )}
+            />
+            <CarouselNext
+              variant={"default"}
+              className={cn(
+                carouselButtonClasses,
+                !changeButton
+                  ? `top-[100%] right-[48%] translate-x-[100%]`
+                  : "mr-[-40px]"
+              )}
+            />
+          </Carousel>
+        </Wrapper>
+      </div>
 
       <Wrapper className={`py-10 md:py-16 lg:pt-40 `}>
         <div

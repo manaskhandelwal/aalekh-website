@@ -19,15 +19,16 @@ import { cn } from "@/utils/cn";
 import { minWidth } from "@/utils/media-query";
 
 interface NavigationProps
-  extends DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {}
+  extends DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {}
 
 const navigationLinksData = [
-  { label: "About Aalekh", herf: "#about-aalekh" },
-  { label: "About LRC", herf: "#about-lrc" },
-  { label: "Authors", herf: "#authors" },
-  { label: "Itinerary", herf: "#itinerary" },
-  { label: "Cerebrum", herf: "#cerebrum" },
-  { label: "Collaborators", herf: "#collaborators" },
+  { label: "Aalekh 2k24", herf: "/2k24" },
+  { label: "About Aalekh", herf: "/#about-aalekh" },
+  { label: "About LRC", herf: "/#about-lrc" },
+  { label: "Cerebrum", herf: "/#cerebrum" },
 ];
 
 export const Navigation: React.FC<NavigationProps> = ({
@@ -76,82 +77,81 @@ export const Navigation: React.FC<NavigationProps> = ({
   };
 
   return mounted ? (
-    <Wrapper
-      className={cn(`flex justify-between items-center py-6`, className)}
-      {...props}
-    >
-      <div className={`flex gap-2`}>
-        {cerebrumLogo}
+    <div className={cn(className)} {...props}>
+      <Wrapper className={cn(`flex justify-between items-center py-6`)}>
+        <div className={`flex gap-2`}>
+          {cerebrumLogo}
 
-        {isSmallScreen ? (
-          <>
-            <div className={`border border-slate-400 mx-2`}></div>
-            <Link href={"https://www.bennett.edu.in/"} target="_blank">
-              <Image
-                alt="bennett university logo"
-                src={"/bennett-colored-logo.png"}
-                width={logoWidth}
-                height={logoHeight}
-                priority
-                quality={100}
-              />
-            </Link>
-          </>
-        ) : null}
-      </div>
-
-      {isLaptop ? (
-        <div className={cn(BERKSHIRE_SWASH.className, "flex gap-10")}>
-          {navLinks()}
-        </div>
-      ) : (
-        <Sheet open={isSidebarOpen}>
-          {!isSidebarOpen ? (
-            <div
-              className={`grid cursor-pointer`}
-              aria-label={"Open Menu"}
-              onClick={() => setIsSidebarOpen(true)}
-            >
-              <HamburgerMenuIcon
-                className={`w-5 h-5 min-[340px]:w-7 min-[340px]:h-7`}
-              />
-            </div>
+          {isSmallScreen ? (
+            <>
+              <div className={`border border-slate-400 mx-2`}></div>
+              <Link href={"https://www.bennett.edu.in/"} target="_blank">
+                <Image
+                  alt="bennett university logo"
+                  src={"/bennett-colored-logo.png"}
+                  width={logoWidth}
+                  height={logoHeight}
+                  priority
+                  quality={100}
+                />
+              </Link>
+            </>
           ) : null}
-          <SheetContent
-            className={cn(
-              "h-screen max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw]"
-            )}
-          >
-            <SheetHeader>
-              <div className={`flex justify-between items-center flex-row`}>
-                <SheetTitle>{cerebrumLogo}</SheetTitle>{" "}
-                {isSidebarOpen ? (
-                  <div
-                    className={`grid cursor-pointer`}
-                    aria-label={"Close Menu"}
-                    onClick={() => setIsSidebarOpen(false)}
-                  >
-                    <Cross1Icon
-                      className="w-5 h-5 min-[340px]:w-7 min-[340px]:h-7"
-                      strokeWidth={2.7}
-                    />
-                  </div>
-                ) : null}
-              </div>
-            </SheetHeader>
+        </div>
 
-            <div
+        {isLaptop ? (
+          <div className={cn(BERKSHIRE_SWASH.className, "flex gap-10")}>
+            {navLinks()}
+          </div>
+        ) : (
+          <Sheet open={isSidebarOpen}>
+            {!isSidebarOpen ? (
+              <div
+                className={`grid cursor-pointer`}
+                aria-label={"Open Menu"}
+                onClick={() => setIsSidebarOpen(true)}
+              >
+                <HamburgerMenuIcon
+                  className={`w-5 h-5 min-[340px]:w-7 min-[340px]:h-7`}
+                />
+              </div>
+            ) : null}
+            <SheetContent
               className={cn(
-                BERKSHIRE_SWASH.className,
-                `my-16 flex flex-col gap-10 text-center`
+                "h-screen max-w-[100vw] min-w-[100vw] sm:min-w-[50vw] md:min-w-[40vw]"
               )}
             >
-              {navLinks("text-lg sm:text-2xl")}
-            </div>
-          </SheetContent>
-        </Sheet>
-      )}
-    </Wrapper>
+              <SheetHeader>
+                <div className={`flex justify-between items-center flex-row`}>
+                  <SheetTitle>{cerebrumLogo}</SheetTitle>{" "}
+                  {isSidebarOpen ? (
+                    <div
+                      className={`grid cursor-pointer`}
+                      aria-label={"Close Menu"}
+                      onClick={() => setIsSidebarOpen(false)}
+                    >
+                      <Cross1Icon
+                        className="w-5 h-5 min-[340px]:w-7 min-[340px]:h-7"
+                        strokeWidth={2.7}
+                      />
+                    </div>
+                  ) : null}
+                </div>
+              </SheetHeader>
+
+              <div
+                className={cn(
+                  BERKSHIRE_SWASH.className,
+                  `my-16 flex flex-col gap-10 text-center`
+                )}
+              >
+                {navLinks("text-lg sm:text-2xl")}
+              </div>
+            </SheetContent>
+          </Sheet>
+        )}
+      </Wrapper>
+    </div>
   ) : null;
 };
 
@@ -165,7 +165,7 @@ export const FixedNavigation: React.FC<FixedNavigationProps> = ({}) => {
       className={cn(
         y && y >= 600 ? "fixed animate-in slide-in-from-top" : "hidden",
         "z-[3000] top-0 left-0 right-0",
-        `bg-cover bg-white border-b-2`
+        `bg-white border-b-2 bg-cover`
       )}
     />
   );

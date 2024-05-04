@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from "@/constant";
+import { BREAKPOINTS } from "@/lib/constant";
 
 export const minWidth = (breakpoint: keyof typeof BREAKPOINTS | number) =>
   `(min-width: ${

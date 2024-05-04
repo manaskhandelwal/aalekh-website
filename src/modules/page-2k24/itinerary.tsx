@@ -34,7 +34,7 @@ export const Itinerary: React.FC<ItineraryProps> = ({}) => {
           Itiner<span className={`text-primary`}>a</span>ry
         </span>
       </div>
-      <div className={`w-full lg:w-[75vw] m-auto`}>
+      <div className={`w-full m-auto`}>
         <Tabs
           defaultValue="day1"
           className={cn(INTER.className, `text-sm font-medium`)}

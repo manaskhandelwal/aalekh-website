@@ -1,3 +1,5 @@
+"use client";
+
 import { useMediaQuery } from "react-responsive";
 
 import { Wrapper } from "@/components/wrapper";
@@ -9,8 +11,8 @@ export const Footer: React.FC<FooterProps> = ({}) => {
   const isMobile = useMediaQuery({ query: minWidth(500) });
 
   return (
-    <>
-      <Wrapper className={`py-10 md:py-20 bg-primary text-white`}>
+    <div className={`bg-primary text-white`}>
+      <Wrapper className={`py-10 md:py-20`}>
         <div
           className={`flex gap-4 items-center md:items-start justify-between text-xl flex-col md:flex-row text-center md:text-left`}
         >
@@ -44,14 +46,14 @@ export const Footer: React.FC<FooterProps> = ({}) => {
             </div>
           </div>
         </div>
-      </Wrapper>{" "}
-      <Wrapper
-        className={`py-2 bg-[#8b182a] text-white text-center font-black`}
-      >
-        <span>
-          &copy; {new Date().getFullYear()} Aalekh 2k24. All rights reserved.
-        </span>
       </Wrapper>
-    </>
+      <div className={`bg-[#8b182a] text-white`}>
+        <Wrapper className={`py-2 text-center font-black`}>
+          <span>
+            &copy; {new Date().getFullYear()} Aalekh 2k24. All rights reserved.
+          </span>
+        </Wrapper>
+      </div>
+    </div>
   );
 };
